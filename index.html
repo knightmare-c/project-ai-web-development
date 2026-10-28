@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
   <!-- ===== Shared header / navigation ===== -->
@@ -89,6 +90,31 @@
       </div>
     </section>
 
+    <!-- Gym gallery carousel (Swiper) -->
+    <section class="section gallery-section">
+      <div class="wrapper">
+        <span class="section-kicker">Inside IronPulse</span>
+        <h2 class="section-title">Gym Gallery</h2>
+        <p class="section-sub">A look inside our training space — from the weights floor to group classes.</p>
+      </div>
+      <div class="wrapper">
+        <div class="swiper my-gallery">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="Assets/images/strength.jpg" alt="Strength training zone"></div>
+            <div class="swiper-slide"><img src="Assets/images/boxing.jpg" alt="Boxing class"></div>
+            <div class="swiper-slide"><img src="Assets/images/hiit.jpg" alt="HIIT group class"></div>
+            <div class="swiper-slide"><img src="Assets/images/yoga.jpg" alt="Yoga studio"></div>
+            <div class="swiper-slide"><img src="Assets/images/team.jpg" alt="Coach team"></div>
+            <div class="swiper-slide"><img src="Assets/images/nutrition.jpg" alt="Nutrition corner"></div>
+            <div class="swiper-slide"><img src="Assets/images/pt.jpg" alt="Personal training session"></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Call to action -->
     <section class="cta-band">
       <div class="wrapper">
@@ -148,5 +174,28 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const gallery = new Swiper('.my-gallery', {
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 16 },
+        768: { slidesPerView: 2, spaceBetween: 20 },
+        1024: { slidesPerView: 3, spaceBetween: 24 },
+      },
+    });
+  </script>
 </body>
 </html>
